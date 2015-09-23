@@ -12,8 +12,12 @@
     <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
     <span class="admin">
       | <%= link_to "Edit", edit_status_path(status) %> | 
-      <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+      <%= button_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
     </span>
   </div>
 </div>
 <% end %>
+<!-- Since jquery-ui-rails 5.0.0
+
+link_to 'text', resource, method: :delete
+doesn't create a link with the (http) DELETE method, but with the GET method. Hence, it's not possible to create a link to destroy an object with link_to. It only works with button_to right now. -->

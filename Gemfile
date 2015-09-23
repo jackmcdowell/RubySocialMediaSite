@@ -10,6 +10,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'minitest'
 gem 'test-unit'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
