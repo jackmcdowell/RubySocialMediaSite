@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   validates :profile_name, format: { with: /^[a-zA-Z0-9_-]+$/, message: "must be formatted correctly." }
 
   has_many :statuses
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
 
   def full_name
     first_name + " " + last_name

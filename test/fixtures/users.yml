@@ -9,3 +9,9 @@ jill:
  last_name: "McDowell"
  email: "jillmcdowell@gmail.com"
  profile_name: "jillmcdowell"
+
+john:
+ first_name: "John"
+ last_name: "McDowell"
+ email: "johnmcdowell@gmail.com"
+ profile_name: "johnmcdowell"
