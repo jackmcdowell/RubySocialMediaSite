@@ -62,6 +62,7 @@ GEM
     minitest (5.8.0)
     multi_json (1.11.2)
     orm_adapter (0.5.0)
+    pg (0.18.3)
     polyglot (0.3.5)
     power_assert (0.2.4)
     rack (1.4.7)
@@ -127,6 +128,7 @@ DEPENDENCIES
   devise
   jquery-rails
   minitest
+  pg
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
   simple_form
