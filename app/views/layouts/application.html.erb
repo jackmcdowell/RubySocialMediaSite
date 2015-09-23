@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SocialMediaSite</title>
+  <title>Jack's Social Media Site</title>
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" %>
 <%= javascript_include_tag "application" %>
@@ -11,9 +11,9 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a href="#" class="brand"> SocialMediaSite</a>
+				<a href="#" class="brand">Someone Posted</a>
 				<ul class="nav">
-					<li><%= link_to "All Statuses", feed_path %></li>
+					<li><%= link_to "All Posts", feed_path %></li>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
