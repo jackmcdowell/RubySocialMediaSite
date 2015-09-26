@@ -36,7 +36,10 @@ class UserTest < ActiveSupport::TestCase
       assert users(:jack).friends.include?(users(:john))
     end
 
+    test "that calling to_param on a user shows a profile_name" do
+      assert_equal "jackmcdowell", users(:jack).to_param
 
+    end
   	# test "a user should have a unique profile name" do
   	# 	user = User.new
   	# 	user.profile_name = users(:jack).profile_name
