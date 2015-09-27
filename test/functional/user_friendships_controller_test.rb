@@ -83,6 +83,37 @@ class UserFriendshipsControllerTest < ActionController::TestCase
 					assert_redirected_to root_path
 				end
 			end
+
+			context "with a valid friend_id" do
+				setup do
+					post :create, user_friendship: { friend_id: users(:john) }
+				end
+
+				should "assign a friend object" do
+					assert assigns(:friend)
+					assert_equal users(:john), assigns(:friend)
+				end
+
+				should "assign a user_friendship object" do
+					assert assigns(:user_friendship)
+					assert_equal users(:jack), assigns(:user_friendship).user
+					assert_equal users(:john), assigns(:user_friendship).friend
+				end
+
+				should "create a friendship" do
+					assert users(:jack).friends.include?(users(:john))
+				end
+
+				should "redirect to the profile page of the friend" do
+					assert_response :redirect
+					assert_redirected_to profile_path(users(:john))
+				end
+
+				should "set the flash message to say that we are now friends" do
+					assert flash[:success]
+					assert_equal "You are now friends with #{users(:john).full_name}", flash[:success]
+				end
+			end
 		end
 	end
 end
