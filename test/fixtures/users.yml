@@ -3,6 +3,7 @@ jack:
  last_name: "McDowell"
  email: "jackmcdowell@gmail.com"
  profile_name: "jackmcdowell"
+ encrypted_password: "$2a$10$t1/k3lrLzn90117LXX.0junBjjo5dPK4nAMeJ40T1LZktL0nDo/uq"
 
 jill:
  first_name: "Jill"
