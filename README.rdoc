@@ -1,1 +1,4 @@
-== Welcome to Rails
+This is a simple social media site in Ruby on Rails with a devise log-in manager.
+The repository is currently under development and is ahead of the heroku live site (socialmediasite.herokuapp.com), and some things may be broken.
+
+To test in developer mode simply clone the project and run migrations. 
