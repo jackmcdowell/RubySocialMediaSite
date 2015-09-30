@@ -66,7 +66,7 @@ end
 
 	context "#accept!" do
 		setup do
-			@user_friendship = UserFriendship.create user: users(:jack), friend: users(:john)
+			@user_friendship = UserFriendship.request users(:jack), users(:john)
 		end
 
 		should "set the state to accepted" do
@@ -85,6 +85,11 @@ end
 			users(:jack).friends.reload
 			assert users(:jack).friends.include?(users(:john))
 		end
+
+		should "accept the mutual friendship" do
+			@user_friendship.accept!
+			assert_equal 'accepted', @user_friendship.mutual_friendship.state
+		end
 	end
 
 	context ".request" do
@@ -101,4 +106,3 @@ end
 		end
 	end
 end
-
