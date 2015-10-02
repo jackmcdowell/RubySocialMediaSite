@@ -105,4 +105,17 @@ end
 			end
 		end
 	end
+
+	context "#delete_mutual_friendship!" do
+		setup do
+			UserFriendship.request users(:jack), users(:john)
+			@friendship1 = users(:jack).user_friendships.where(friend_id: users(:john).id).first
+			@friendship2 = users(:john).user_friendships.where(friend_id: users(:jack).id).first		
+		end
+		should "delete the mutual friendship" do
+			assert_equal @friendship2, @friendship1.mutual_friendship
+			@friendship1.delete_mutual_friendship!
+			assert !UserFriendship.exists?(@friendship2.id)
+		end
+	end
 end
