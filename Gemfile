@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'minitest'
 gem 'test-unit'
 gem 'state_machine'
+gem 'draper'
 
 group :test do
 	gem 'shoulda'
