@@ -1,5 +1,13 @@
+# class UserFriendshipDecorator < Draper::Base
+# decorates :user_friendship
+
 class UserFriendshipDecorator < Draper::Decorator
   delegate_all
+
+def friendship_state
+	"Pending"
+
+end
 
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
