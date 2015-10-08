@@ -5,7 +5,7 @@ class UserFriendshipDecorator < Draper::Decorator
   delegate_all
 
 def friendship_state
-	"Pending"
+	model.state.titleize
 
 end
 
