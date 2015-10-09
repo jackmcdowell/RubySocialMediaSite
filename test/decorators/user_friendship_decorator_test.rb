@@ -22,5 +22,15 @@ class UserFriendshipDecoratorTest < Draper::TestCase
 				assert_equal "Accepted", @decorator.friendship_state
 			end
 		end
+		context "with a requested user friendship"  do
+			setup do
+				@user_friendship = create(:requested_user_friendship)
+				@decorator = UserFriendshipDecorator.decorate(@user_friendship)
+			end
+
+			should "return Requested" do
+				assert_equal "Requested", @decorator.friendship_state
+			end
+		end
 	end
 end
