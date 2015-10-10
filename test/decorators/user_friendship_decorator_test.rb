@@ -1,6 +1,17 @@
 require 'test_helper'
 
 class UserFriendshipDecoratorTest < Draper::TestCase
+	context "#sub_message" do
+		context "with a pending user friendship"  do
+		setup do
+			@user_friendship = create(:pending_user_friendship, friend: create(:user, first_name: 'John'))
+			@decorator = UserFriendshipDecorator.decorate(@user_friendship)
+		end
+			should "return the correct message" do
+				assert_equal "<h3>Do you really want to be friends with John?</h3>", @decorator.sub_message
+		end
+	end
+end
 	context "#friendship_state" do
 		context "with a pending user friendship"  do
 			setup do

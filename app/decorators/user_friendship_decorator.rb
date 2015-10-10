@@ -9,6 +9,11 @@ def friendship_state
 
 end
 
+def sub_message
+  "<h3>Do you really want to be friends with John?</h3>"
+
+end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
