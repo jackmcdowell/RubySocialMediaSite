@@ -11,7 +11,19 @@ class UserFriendshipDecoratorTest < Draper::TestCase
 				assert_equal "<h3>Do you really want to be friends with John?</h3>", @decorator.sub_message
 		end
 	end
-end
+
+		context "with a accepted user friendship"  do
+			setup do
+				@user_friendship = create(:accepted_user_friendship, friend: create(:user, first_name: 'John'))
+				@decorator = UserFriendshipDecorator.decorate(@user_friendship)
+			end
+
+			should "return the correct message" do
+				assert_equal "<h3>You are friends with John</h3>", @decorator.sub_message
+			end
+		end
+	end
+	
 	context "#friendship_state" do
 		context "with a pending user friendship"  do
 			setup do

@@ -10,8 +10,12 @@ def friendship_state
 end
 
 def sub_message
-  "<h3>Do you really want to be friends with John?</h3>"
-
+  case model.state
+    when 'pending'
+    "<h3>Do you really want to be friends with John?</h3>"
+    when 'accepted'
+    "<h3>You are friends with #{model.friend.first_name}</h3>"  
+  end
 end
 
   # Define presentation-specific methods here. Helpers are accessed through
