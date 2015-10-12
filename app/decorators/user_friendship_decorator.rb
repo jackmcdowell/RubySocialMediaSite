@@ -12,9 +12,9 @@ end
 def sub_message
   case model.state
     when 'pending'
-    "<h3>Do you really want to be friends with John?</h3>"
+    "Do you really want to be friends with #{model.friend.first_name}?"
     when 'accepted'
-    "<h3>You are friends with #{model.friend.first_name}</h3>"  
+    "You are friends with #{model.friend.first_name}"  
   end
 end
 
